@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Application.Articles.Queries.GetArticleList.ArticlesListModel>
+
+<div class="main">
+    <h1>Articles</h1>
+    <ul class="news">
+        @{ 
+            @foreach(var article in Model) {
+                
+                <li>
+                    <div class="date">
+                        <p>
+                            <span>@article.Date.Month</span> @article.Date.Year
+                        </p>
+                    </div>
+                    <h2>@article.Name <span>Juan Hernandez</span></h2> 
+                    <p>
+                        @article.ContentSummary <span><a asp-controller="Articles" asp-action="Detail" class="more">Read More</a></span>
+                    </p>
+                </li>
+            }
+        }
+        <li>
+            <div class="date">
+                <p>
+                    <span>03</span>
+                    2023
+                </p>
+            </div>
+            <h2>Dummy Article <span>Juan Hernandez</span></h2>
+            <p>
+                Placeholder.... <span><a href="post.html" class="more">Read More</a></span>
+            </p>
+        </li>
+    </ul>
+</div>
+
